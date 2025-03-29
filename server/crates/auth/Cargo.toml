@@ -1,6 +1,17 @@
 [package]
 name = "auth"
 version = "0.1.0"
-edition = "2024"
+edition.workspace = true
 
 [dependencies]
+
+# Extrenal crates
+
+axum.workspace = true
+axum-extra.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+jsonwebtoken.workspace = true
+objs.workspace = true

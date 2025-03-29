@@ -9,6 +9,9 @@ build-server:
 check-server:
   (cd ./server && cargo check)
 
+dev-server:
+  (cd ./server && cargo run)
+
 # ---- web ----
 
 build-web:
@@ -27,3 +30,5 @@ init: init-web
 build: build-server build-web
 
 check: check-server check-web
+
+dev: check dev-server

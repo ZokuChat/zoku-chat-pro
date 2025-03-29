@@ -1,6 +1,11 @@
 [package]
 name = "objs"
 version = "0.1.0"
-edition = "2024"
+edition.workspace = true
 
 [dependencies]
+
+# Extrenal crates
+
+sea-orm.workspace = true
+serde.workspace = true
