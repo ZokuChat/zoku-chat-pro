@@ -29,11 +29,23 @@ pub enum Relation {
         to = "super::message::Column::ConversationId"
     )]
     Messages,
+    #[sea_orm(
+        has_many = "super::conversation_user::Entity",
+        from = "Column::Id",
+        to = "super::conversation_user::Column::CoversationId"
+    )]
+    ConversationUsers,
 }
 
 impl Related<super::message::Entity> for Entity {
     fn to() -> RelationDef {
         Relation::Messages.def()
+    }
+}
+
+impl Related<super::conversation_user::Entity> for Entity {
+    fn to() -> RelationDef {
+        Relation::ConversationUsers.def()
     }
 }
 

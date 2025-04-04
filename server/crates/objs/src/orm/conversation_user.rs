@@ -28,4 +28,10 @@ pub enum Relation {
   User,
 }
 
+impl Related<super::conversation::Entity> for Entity {
+  fn to() -> RelationDef {
+    Relation::Conversation.def()
+  }
+}
+
 impl ActiveModelBehavior for ActiveModel {}
